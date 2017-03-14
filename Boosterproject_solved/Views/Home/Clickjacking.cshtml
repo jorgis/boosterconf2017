@@ -1,0 +1,13 @@
+@using Boosterproject.Models
+@{
+    ViewData["Title"] = "Clickjacking";
+}
+<h2>@ViewData["Title"].</h2>
+
+<p>This is a sample page with a button used to demonstrate clickjacking.</p>
+<p>Clickjacking is when an attacker uses multiple transparent or opaque layers to trick a user into clicking on a button or link on another page 
+when they were intending to click on the the top level page</p>
+
+<form asp-controller="Home" asp-action="Clickjacking" method="post">        
+    <button style="color:white;background-color: red;position: absolute;top:12px;right: 80px;z-index: 10000;" type="submit">DELETE</button>
+</form>

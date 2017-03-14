@@ -1,0 +1,15 @@
+@using Boosterproject.Models
+@model XssModel
+@{
+    ViewData["Title"] = "XSS";
+}
+<h2>@ViewData["Title"]</h2>
+
+<p>This is a sample page with a blatant XSS vulnerability.</p>
+
+<h3>Welcome, @Html.Raw(Model.Name ?? "meatbag")</h3>
+<p>Enter user name for a personalized greeting</p>
+<form asp-controller="Home" asp-action="Xss" method="post">
+    Name: <input asp-for="Name" />
+    <button type="submit">Greet me!</button>
+</form>
